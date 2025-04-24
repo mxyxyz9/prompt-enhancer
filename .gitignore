@@ -1,0 +1,15 @@
+# Ignore environment variables
+.env
+
+# Dependency directories
+node_modules/
+
+# Build files
+build/
+dist/
+
+# OS metadata
+.DS_Store
+
+# Local development files
+*.local

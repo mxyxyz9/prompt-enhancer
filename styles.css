@@ -46,7 +46,7 @@ textarea {
 
 button#save-button {
   width: 100%;
-  background-color: #1877f2; /* Facebook Blue */
+  background-color: #007bff; /* Standard Blue */
   color: white;
   padding: 12px 15px;
   border: none;
@@ -58,7 +58,7 @@ button#save-button {
 }
 
 button#save-button:hover {
-  background-color: #166fe5;
+  background-color: #0056b3;
 }
 
 p#status {

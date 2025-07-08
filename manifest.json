@@ -23,12 +23,5 @@
         "styles.css"
       ]
     }
-  ],
-  "action": {
-    "default_title": "LLM Text Enhancer",
-    "default_popup": "options.html"
-  },
-  "icons": {
-    "128": "PHOTO-2025-07-03-19-40-52.jpg"
-  }
+  ]
 }

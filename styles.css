@@ -1,97 +1,39 @@
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  margin: 20px;
-  background-color: #f0f2f5;
-  color: #1c1e21;
+.pe-modal {
   width: 400px;
-}
-
-h1 {
-  font-size: 24px;
-  color: #1c1e21;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.container {
-  background-color: #fff;
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-label {
-  display: block;
-  margin-bottom: 8px;
-  font-weight: 600;
-  color: #606770;
-}
-
-input[type="text"],
-textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 15px;
-  border: 1px solid #dddfe2;
-  border-radius: 6px;
-  box-sizing: border-box;
-  font-size: 14px;
-  font-family: inherit;
-}
-
-textarea {
-  resize: vertical;
-  min-height: 100px;
-}
-
-button#save-button {
-  width: 100%;
-  background-color: #007bff; /* Standard Blue */
-  color: white;
-  padding: 12px 15px;
   border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: 600;
-  transition: background-color 0.2s ease-in-out;
+  border-radius: 8px;
 }
-
-button#save-button:hover {
-  background-color: #0056b3;
+.pe-modal::backdrop {
+  background: rgba(0,0,0,0.5);
 }
-
-p#status {
-  margin-top: 15px;
-  color: #28a745; /* Green for success */
+.pe-modal label {
+  display: block;
+  margin-top: 10px;
   font-weight: bold;
-  text-align: center;
+}
+.pe-modal textarea {
+  width: 100%;
+  min-height: 80px;
+}
+.pe-buttons {
+  margin-top: 15px;
+  text-align: right;
+}
+.pe-buttons button {
+  margin-left: 10px;
 }
 
-/* Styles for the enhance button on content pages */
-#llm-enhance-button {
-  position: absolute; /* This is set by JS, but good to have here */
-  z-index: 99999; /* This is set by JS */
-  background-color: #ffffff;
-  color: #1c1e21;
-  border: 1px solid #dddfe2;
-  padding: 6px 12px;
-  border-radius: 6px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  font-size: 14px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  transition: all 0.2s ease-in-out;
+.enhance-btn {
+    background-color: #4CAF50; /* Example background color */
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 8px;
 }
 
-#llm-enhance-button:hover {
-  background-color: #f0f2f5;
-  border-color: #ced0d4;
-}
-
-#llm-enhance-button:disabled {
-  background-color: #e4e6eb;
-  color: #bcc0c4;
-  cursor: not-allowed;
-  border-color: #dddfe2;
+.enhance-btn:hover {
+    background-color: #45a049;
 }

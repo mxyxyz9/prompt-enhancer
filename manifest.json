@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "Prompt Enhancer & RTL Fix",
+  "version": "1.1",
+  "description": "Enhances prompts using Gemini AI and fixes RTL/LTR text direction on AI platforms",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://api.gemini.ai/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.deepseek.com/*",
+        "https://chatgpt.com/*",
+        "https://aistudio.google.com/*",
+        "https://chat.qwen.ai/*",
+        "https://console.groq.com/*",
+        "https://bard.google.com/*",
+        "https://claude.ai/*",
+	"https://www.perplexity.ai/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "32": "icon32.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

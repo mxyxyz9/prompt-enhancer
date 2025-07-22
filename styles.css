@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap');
+
+body {
+    font-family: 'Inter', 'Vazirmatn', sans-serif;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    padding: 24px 18px;
+    margin: 0;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    background: rgba(255,255,255,0.5);
+    box-shadow: 0 2px 8px rgba(31,38,135,0.05);
+    font-size: 1em;
+    outline: none;
+    transition: border 0.2s;
+}
+input[type="text"]:focus {
+    border: 1.5px solid #7e9cff;
+    background: rgba(255,255,255,0.7);
+}
+
+button, .enhance-button {
+    background: rgba(126,156,255,0.85);
+    color: #fff;
+    border: none;
+    border-radius: 16px;
+    padding: 10px 22px;
+    font-size: 1em;
+    font-family: 'Inter', 'Vazirmatn', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(126,156,255,0.12);
+    cursor: pointer;
+    transition: background 0.18s, box-shadow 0.18s;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    display: inline-block;
+}
+button:hover, .enhance-button:hover {
+    background: rgba(126,156,255,1);
+    box-shadow: 0 4px 16px rgba(126,156,255,0.18);
+}
+button:disabled, .enhance-button:disabled {
+    background: #e0e0e0;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+#status {
+    margin-top: 10px;
+    font-size: 0.95em;
+    color: #7e9cff;
+    min-height: 18px;
+}
+
+h2 {
+    font-family: 'Inter', 'Vazirmatn', sans-serif;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-bottom: 18px;
+    color: #3a3a3a;
+    letter-spacing: 0.01em;
+}

@@ -29,7 +29,7 @@
 ## 📸 Screenshot
 
 <p align="center">
-  <img src="ss.png" alt="Prompt Enhancer Screenshot" width="420" style="border-radius:18px;box-shadow:0 8px 32px rgba(31,38,135,0.18);">
+  <img src="Screenshot 2025-07-22 at 9.36.24 PM.png" alt="Prompt Enhancer Screenshot" width="420" style="border-radius:18px;box-shadow:0 8px 32px rgba(31,38,135,0.18);">
 </p>
 
 ---

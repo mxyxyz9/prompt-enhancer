@@ -12,27 +12,9 @@
   <img src="https://img.shields.io/badge/Powered%20by-Gemini-blueviolet?logo=googlechrome" alt="Gemini AI">
 </p>
 
----
 
-## 🧊 Minimal, Modern, Glassmorphic UI
-- Clean, icon-based design
-- Subtle glassmorphism and neumorphism
-- Responsive and beautiful popup
 
----
 
-## 🚀 Features Timeline
-
-```mermaid
-%% Timeline of major features
-timeline
-    title Extension Evolution
-    2024-07-01 : Initial release (Groq API)
-    2024-07-22 : Gemini API integration & modern UI
-    2024-07-23 : Glassmorphic redesign, minimal icons, improved UX
-```
-
----
 
 ## 🛠️ How It Works
 

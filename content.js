@@ -97,7 +97,7 @@ function addEnhanceButton() {
 }
 
 async function enhanceText(text, apiKey) {
-    const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=' + apiKey + '&candidate_count=1', {
+    const response = await fetch('https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro-latest:generateContent?key=' + apiKey, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -124,17 +124,13 @@ async function enhanceText(text, apiKey) {
                         }
                     ]
                 }
-            ],
-            generationConfig: {
-                maxOutputTokens: 500,
-                temperature: 0.7,
-                topP: 0.8,
-                topK: 40
-            }
+            ]
         })
     });
 
     if (!response.ok) {
+        const errorBody = await response.text();
+        console.error('API Error Body:', errorBody);
         throw new Error(`API request failed with status ${response.status}`);
     }
 

@@ -19,24 +19,7 @@ function addEnhanceButton() {
             button.style.alignItems = 'center';
             button.textContent = 'Enhance prompt';
 
-            textarea.addEventListener('input', function(event) {
-                const text = textarea.textContent || textarea.value;
-                if (text) {
-                    const firstChar = text.charAt(0);
-                    if (/[\u0600-\u06FF]/.test(firstChar)) {
-                        textarea.setAttribute("dir", "rtl");
-                        textarea.style.textAlign = "right";
-                        textarea.style.fontFamily = 'Vazirmatn, sans-serif';
-                    } else if (/[A-Za-z]/.test(firstChar)) {
-                        textarea.setAttribute("dir", "ltr");
-                        textarea.style.textAlign = "left";
-                        textarea.style.fontFamily = ''; // Reset font if needed
-                    }
-                } else {
-                    textarea.setAttribute("dir", "ltr"); // Default to LTR when empty
-                    textarea.style.textAlign = "left";
-                }
-            });
+            
 
             button.onclick = async () => {
                 const originalText = textarea.textContent || textarea.value; // Handle both textarea and contenteditable div
@@ -45,10 +28,10 @@ function addEnhanceButton() {
                         button.textContent = '✨ Enhancing...';
                         button.disabled = true;
 
-                        chrome.storage.local.get(['geminiApiKey'], async function(result) {
-                            const apiKey = result.geminiApiKey;
+                        chrome.storage.local.get(['apiKey'], async function(result) {
+                            const apiKey = result.apiKey;
                             if (!apiKey) {
-                                alert('Gemini API Key is not set. Please open the extension popup and set your Gemini API Key.');
+                                alert('API Key is not set. Please open the extension popup and set your API Key.');
                                 button.textContent = 'Enhance prompt';
                                 button.disabled = false;
                                 return;
@@ -139,51 +122,3 @@ async function enhanceText(text, apiKey) {
 }
 
 
-function applyTextDirection(el) {
-  // Skip anchor tags (<a>) to avoid interfering with links
-  if (el.closest("nav")) return;
-
-  const text = el.textContent.trim();
-
-  if (!text) return;
-
-  if (/[\u0600-\u06FF]/.test(text)) {
-    el.setAttribute("dir", "rtl");
-    el.style.textAlign = "right";
-	el.style.fontFamily = 'Vazirmatn, sans-serif';
-  } else if (/[A-Za-z]/.test(text)) {
-    el.setAttribute("dir", "ltr");
-    el.style.textAlign = "left";
-  }
-}
-
-function processAllElements() {
-  document.querySelectorAll("*").forEach(applyTextDirection);
-}
-
-
-// Run on page load and watch for dynamic content
-
-const observer = new MutationObserver((mutationsList, observer) => { // Combined callback function
-
-  // Functionality of the first observer (addEnhanceButton)
-  addEnhanceButton(mutationsList, observer); // Pass mutationsList and observer if addEnhanceButton needs them
-
-
-  // Functionality of the second observer (applyTextDirection to added nodes)
-  mutationsList.forEach((mutation) => {
-    mutation.addedNodes.forEach((node) => {
-      if (node.nodeType === 1) { // Check if it's an Element node
-        if (!node.closest("nav")) {
-          applyTextDirection(node);
-          node.querySelectorAll("*").forEach(applyTextDirection);
-        }
-      }
-    });
-  });
-
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
-addEnhanceButton();
-processAllElements();
